@@ -1,0 +1,32 @@
+{
+  "name": "tute-buttons",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tutegenomics/buttons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tutegenomics/buttons"
+  },
+  "main": "src/loadingButton.js",
+  "keywords": [
+    "angular",
+    "loading",
+    "button"
+  ],
+  "authors": [
+    "Tute Genomics"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0"
+  },
+  "moduleType": [
+    "globals"
+  ]
+}
