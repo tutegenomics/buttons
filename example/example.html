@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		html {
+			font-family: sans-serif;
+			padding: 3em;
+		}
+		.btn-is-loading {
+			opacity: 0.6;
+			pointer-events: none;
+		}
+		.btn {
+			font-size: 56px;
+			font-weight: 700;
+			padding: 1em;
+			border: solid 1px #b3b3b3;
+			border-radius: 3px;
+			background-color: rgba(255, 255, 255, 0.4);
+			color: #808080;
+			display: inline-block;
+			text-decoration: none;
+			cursor: pointer;
+			position: relative;
+			text-align: center;
+			margin: 1em 0;
+		}
+	</style>
+</head>
+
+<body ng-app="app" ng-controller="mainCtrl">
+
+	<p>Click the button to see it in action. The directive handles the state changing logic of replacing the button text and toggling a loading class.</p>
+
+	<tute-button 
+		class="btn btn-pri"
+		ng-click="getPokemon()"
+		loading="requestPending" 
+		loading-text="'Catching...'" 
+		text="'Gotta catch em all'"
+	>
+	</tute-button>
+
+	<h4>Your Pokemon:</h4>
+	<h2>{{ selectedPokemon }}</h2>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+	<script src="../src/loadingButton.js"></script>
+	<script src="example.js"></script>
+</body>
+</html>
