@@ -26,6 +26,11 @@ text: '=',         //string, default button text
 
 Maybe more buttons to come in this repo, hence the vague, all encompassing name.
 
+## Install
+```
+bower install tute-buttons
+```
+
 ## Developing
 
 Run `./dev-server.sh` to serve it locally. 
