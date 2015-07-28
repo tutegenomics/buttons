@@ -11,8 +11,8 @@
 			opacity: 0.6;
 			pointer-events: none;
 		}
-		.btn {
-			font-size: 56px;
+		.btn.btn-big {
+			font-size: 34px;
 			font-weight: 700;
 			padding: 1em;
 			border: solid 1px #b3b3b3;
@@ -27,26 +27,33 @@
 			margin: 1em 0;
 		}
 	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 
 <body ng-app="app" ng-controller="mainCtrl">
 
 	<p>Click the button to see it in action. The directive handles the state changing logic of replacing the button text and toggling a loading class.</p>
 
-	<tute-button 
-		class="btn btn-pri"
+	<tute-loading-button
+		class="btn btn-big btn-pri"
 		ng-click="getPokemon()"
 		loading="requestPending" 
 		loading-text="'Catching...'" 
 		text="'Gotta catch em all'"
 	>
-	</tute-button>
+	</tute-loading-button>
 
-	<h4>Your Pokemon:</h4>
-	<h2>{{ selectedPokemon }}</h2>
+	<h3>You caught: {{ selectedPokemon }}</h3>
+
+	<hr>
+
+	<h3>Select your starting Pokemon</h3>
+	<tute-radio-group-button buttons="radios" ng-model="radioVal"></tute-radio-group-button>
+	<p>Your choice: {{radioVal}}</p>
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
-	<script src="../src/loadingButton.js"></script>
+	<script src="../dist/tute-buttons-all.js"></script>
 	<script src="example.js"></script>
 </body>
 </html>

@@ -1,9 +1,12 @@
-# Angular loader button
+# Tute buttons (a.k.a Tuttons)
+####(pronounced: "tootins")
+
+##Loading button
 
 A button that handles the state changing logic of replacing the button text and toggling a loading class. Example usage:
 
 ```html
-	<tute-button 
+	<tute-loading-button 
 		class="btn btn-pri"
 		btn-type="submit"
 		ng-click="getPokemon()"
@@ -11,10 +14,10 @@ A button that handles the state changing logic of replacing the button text and 
 		loading-text="'Catching...'" 
 		text="'Gotta catch em all'"
 	>
-	</tute-button>
+	</tute-loading-button >
 ```
 
-Here's the API:
+API:
 
 ```javascript
 btnType: '@',      //string, valid values: submit|button. Changes if <button> or <input type="submit" /> element
@@ -24,13 +27,48 @@ loadingText: '=',  //string, text to change button when in loading state
 text: '=',         //string, default button text
 ```
 
-Maybe more buttons to come in this repo, hence the vague, all encompassing name.
+##Radio group buttons
+
+Based on bootstrap's radio button group: [http://getbootstrap.com/javascript/#buttons](http://getbootstrap.com/javascript/#buttons). Uses bootstrap's classes.
+
+API:
+
+```javascript
+/*
+buttons should look like: 
+[
+	{
+		label: 'Option 1',
+		preselected: true //makes this one selected initially
+	},
+	{
+		label: 'Option 2',
+		classes: 'btn-primary'
+	}
+]
+ */
+buttons: '='
+```
+
 
 ## Install
 ```
 bower install tute-buttons
 ```
 
+Include in your app:
+
+```javascript
+angular.module('my-app', [
+	'tute-buttons', //this requires you to include all the JS (dist/tute-buttons-all.js)
+
+	//OR you may individually pick and choose what you want and add individual modules:
+	'tute-buttons.loadingButton' //include only the dist/loadingButton.js script
+]);
+```
+
 ## Developing
 
 Run `./dev-server.sh` to serve it locally. 
+
+Run `gulp` to watch and re-build it. 

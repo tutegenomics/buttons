@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('app', [
 	'tute-buttons'
 ])
@@ -29,6 +31,25 @@ angular.module('app', [
 			$scope.requestPending = false;
 		});
 	};
+
+	//radio buttons for radio group directive
+	//the value of the directive is assigned to $scope.radioVal
+	var radioClasses = 'btn btn-default';
+	$scope.radios = [
+		{
+			label: 'Charmander',
+			preselected: true,
+			classes: radioClasses
+		},
+		{
+			label: 'Bulbasaur',
+			classes: radioClasses
+		},
+		{
+			label: 'Squirtle',
+			classes: radioClasses
+		}
+	];
 
 
 });

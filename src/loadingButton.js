@@ -1,6 +1,6 @@
-angular.module('tute-buttons', [])
+angular.module('tute-buttons.loadingButton', [])
 
-.directive('tuteButton', function() {
+.directive('tuteLoadingButton', function() {
 
 	//the DDO
 	return {
@@ -18,13 +18,12 @@ angular.module('tute-buttons', [])
 		},
 
 		//dynamically specify what template should be
-		//<input type="submit" /> requires some extra love
 		template: function(el, attrs) {
 			if(!attrs.btnType || attrs.btnType === 'button') {
 				return '<button>{{btnText}}</button>';
 			}
 			else if(attrs.btnType === 'submit') {
-				return '<input type="submit" ng-value="btnText" />';
+				return '<button type="submit">{{btnText}}</button>';
 			}
 			else {
 				throw new Error('invalid btnType on tuteButton directive: ', attrs.btnType);
@@ -38,7 +37,7 @@ angular.module('tute-buttons', [])
 
 	function link($scope, el, attrs) {
 		$scope.btnText = $scope.text;		
-		var loadingClass = attrs.loadingClass || 'btn-is-loading';
+		let loadingClass = attrs.loadingClass || 'btn-is-loading';
 
 
 		$scope.$watch('loading', function(newVal, oldVal) {
@@ -60,8 +59,8 @@ angular.module('tute-buttons', [])
 
 
 		function toggleClass() {
-			var classes = el[0].className.split(' ');
-			var classIndex = classes.indexOf(loadingClass);
+			let classes = el[0].className.split(' ');
+			let classIndex = classes.indexOf(loadingClass);
 
 			if(classIndex === -1) {
 				classes.push(loadingClass);

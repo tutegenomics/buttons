@@ -1,2 +1,5 @@
 bower_components
 node_modules
+
+#this is the cheater's way of making sure this file isn't tracked because it's not needed as a stand-alone file
+dist/core.js
