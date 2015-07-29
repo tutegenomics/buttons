@@ -32,6 +32,10 @@ angular.module('app', [
 		});
 	};
 
+	$scope.toggleLoadingState = function() {
+		$scope.requestPending = !$scope.requestPending;
+	};
+
 	//radio buttons for radio group directive
 	//the value of the directive is assigned to $scope.radioVal
 	var radioClasses = 'btn btn-default';

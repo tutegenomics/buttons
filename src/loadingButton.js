@@ -10,25 +10,19 @@ angular.module('tute-buttons.loadingButton', [])
 		replace: true,
 		
 		scope: {
-			btnType: '@',      //string, valid values: submit|button. Changes if <button> or <input type="submit" />
+			//btnType: '@',      //string, valid values: submit|button. Changes if <button> or <input type="submit" />
 			loadingClass: '@', //string, CSS class that gets added when the button is loading. Default: 'btn-is-loading'
 			loading: '=',      //bool, toggles loading/normal state
 			loadingText: '=',  //string, text to change button when in loading state
 			text: '=',         //string, default button text
 		},
 
-		//dynamically specify what template should be
-		template: function(el, attrs) {
-			if(!attrs.btnType || attrs.btnType === 'button') {
-				return '<button>{{btnText}}</button>';
-			}
-			else if(attrs.btnType === 'submit') {
-				return '<button type="submit">{{btnText}}</button>';
-			}
-			else {
-				throw new Error('invalid btnType on tuteButton directive: ', attrs.btnType);
-			}
-		},
+		template: `
+			<button>
+				<span>{{btnText}}</span>
+				<span ng-show="loading" class="loader"></span>
+			</button>
+		`,
 
 		link: link
 
@@ -39,6 +33,9 @@ angular.module('tute-buttons.loadingButton', [])
 		$scope.btnText = $scope.text;		
 		let loadingClass = attrs.loadingClass || 'btn-is-loading';
 
+		if($scope.loading) {
+			toggleState();
+		}
 
 		$scope.$watch('loading', function(newVal, oldVal) {
 			if(newVal !== oldVal) {

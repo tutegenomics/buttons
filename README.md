@@ -8,7 +8,6 @@ A button that handles the state changing logic of replacing the button text and 
 ```html
 	<tute-loading-button 
 		class="btn btn-pri"
-		btn-type="submit"
 		ng-click="getPokemon()"
 		loading="requestPending" 
 		loading-text="'Catching...'" 
@@ -20,7 +19,6 @@ A button that handles the state changing logic of replacing the button text and 
 API:
 
 ```javascript
-btnType: '@',      //string, valid values: submit|button. Changes if <button> or <input type="submit" /> element
 loadingClass: '@', //string, CSS class that gets added when the button is loading. Default: 'btn-is-loading'
 loading: '=',      //bool, toggles loading/normal state
 loadingText: '=',  //string, text to change button when in loading state
