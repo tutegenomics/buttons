@@ -40,22 +40,40 @@ angular.module('tute-buttons.radioGroup', [])
 		//prevent "name" attr collisions
 		$scope.groupName = 'tuteBtnGroup' + '-' + generateUID();
 
-		if($scope.buttons && $scope.buttons.length > 0) {
-			//set ngModel initially
-			$scope.buttons.some((btn) => {
-				if(btn.preselected) {
-					ngModel.$setViewValue(btn.label);
-					return true; //break
-				}
-			});
+		setInitialValue();
+
+		function apiCheck() {
+			if(!$scope.buttons) {
+				return false;
+			}
+			else {
+				return $scope.buttons.every(item => {
+					return !(typeof item.value === 'undefined');
+				});
+			}
+		}
+
+		//set ngModel initially
+		function setInitialValue() {
+			if(!apiCheck()) {
+				throw new Error('tuteRadioGroupButton: buttons must be defined and have a value property');
+			}
+			else {
+				$scope.buttons.some(btn => {
+					if(btn.preselected) {
+						ngModel.$setViewValue(btn);
+						return true; //break
+					}
+				});
+			}
 		}
 
 		$scope.onBtnClick = function(btn) {
-			ngModel.$setViewValue(btn.label);
+			ngModel.$setViewValue(btn);
 		};
 
 		$scope.btnIsActive = function(btn) {
-			return ngModel.$viewValue === btn.label;
+			return ngModel.$viewValue.value === btn.value;
 		};
 
 	}

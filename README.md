@@ -39,10 +39,12 @@ buttons should look like:
 [
 	{
 		label: 'Option 1',
+		value: 1,
 		preselected: true //makes this one selected initially
 	},
 	{
 		label: 'Option 2',
+		value: 2,
 		classes: 'btn-primary'
 	}
 ]

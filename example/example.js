@@ -38,15 +38,18 @@ angular.module('app', [
 	$scope.radios = [
 		{
 			label: 'Charmander',
+			value: 1,
 			preselected: true,
 			classes: radioClasses
 		},
 		{
 			label: 'Bulbasaur',
+			value: 2,
 			classes: radioClasses
 		},
 		{
 			label: 'Squirtle',
+			value: 3,
 			classes: radioClasses
 		}
 	];
