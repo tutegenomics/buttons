@@ -1,0 +1,29 @@
+{
+  "name": "tute-buttons",
+  "version": "0.3.0",
+  "description": "Tute-y frutti buttons. A-wop-bom-a-loo-mop-a-lomp-bom-bom!",
+  "main": "dist/tute-buttons-all.js",
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-watch": "^4.3.4",
+    "gulp-wrap": "^0.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tutegenomics/buttons.git"
+  },
+  "author": "Tute Engineering",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tutegenomics/buttons/issues"
+  },
+  "homepage": "https://github.com/tutegenomics/buttons#readme"
+}
