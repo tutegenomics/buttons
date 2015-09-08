@@ -1,4 +1,8 @@
-(function(){ 'use strict';
+/* commonjs package manager support */
+if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.exports === exports) {
+    module.exports = 'tute-buttons';
+}
+(function(window, angular){ 'use strict';
 
 angular.module('tute-buttons', ['tute-buttons.loadingButton', 'tute-buttons.radioGroup']);
 'use strict';
@@ -126,4 +130,4 @@ angular.module('tute-buttons.radioGroup', []).directive('tuteRadioGroupButton', 
 			return ngModel.$viewValue.value === btn.value;
 		};
 	}
-}); })();
+}); })(window, window.angular);
